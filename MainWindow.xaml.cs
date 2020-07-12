@@ -11,6 +11,7 @@ namespace WpfApp02_TreeView
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// https://docs.microsoft.com/pl-pl/dotnet/desktop-wpf/data/data-binding-overview
+    /// https://www.youtube.com/watch?v=U2ZvZwDZmJU
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -36,34 +37,7 @@ namespace WpfApp02_TreeView
         /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            /// get every logical drive on the machine 
-            foreach (var drive in Directory.GetLogicalDrives())
-            {
-                // create a new item for it
-                // tworzymy nowy element dla każdego dysku logicznego
-                var item = new TreeViewItem()
-                {
-                 // set the header
-                 Header = drive,
-
-                // and path
-                Tag = drive
-                };
-
-                
-               // add a dummy item 
-               // dodajemy sztuczny element o wartości null aby element dał się rozwinąć
-               item.Items.Add(null);
-
-                // Listen out for item being expanded
-                // odczytujemy foldery i pliki
-                item.Expanded += Folder_Expanded;
-
-                // Add it to the main tree view
-                // Dodanie pozycji do TreeView, 
-                // jedyne powiązanie z obiektem utworzonym w XAML po x:Name 
-                FolderView.Items.Add(item);
-            }
+      
         }
        
         #endregion

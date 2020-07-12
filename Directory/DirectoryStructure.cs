@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,22 @@ namespace WpfApp02_TreeView
 {
     public static class DirectoryStructure
     {
-        /// <summary>
-        /// Find the File Folder name from a full path
-        /// Wyodrębniamy nazwę pliku lub katalogu z pełnej ścieżki
-        /// </summary>
-        /// <param name="path"> The full Path</param>
-        /// <returns></returns>
-        public static string GetFileFolderName(string path)
+        public static List<DirectoryItem> GetLogicalDrives()
+        {
+            /// get every logical drive on the machine 
+            return Directory.GetLogicalDrives().Select(drive => new DirectoryItem { FullPath = drive, Type = DirectoryItemType.Drive }).ToList();
+           
+        }
+
+              
+
+    /// <summary>
+    /// Find the File Folder name from a full path
+    /// Wyodrębniamy nazwę pliku lub katalogu z pełnej ścieżki
+    /// </summary>
+    /// <param name="path"> The full Path</param>
+    /// <returns></returns>
+    public static string GetFileFolderName(string path)
         {
 
             // if we have no path return empty

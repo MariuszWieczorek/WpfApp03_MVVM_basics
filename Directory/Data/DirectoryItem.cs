@@ -8,7 +8,7 @@
         /// <summary>
         /// The type of this item
         /// </summary>
-        public DirectoryItem Type { get; set; }
+        public DirectoryItemType Type { get; set; }
         
         /// <summary>
         /// the absolutle path to this item
