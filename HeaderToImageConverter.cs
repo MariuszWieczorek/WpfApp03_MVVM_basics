@@ -59,7 +59,8 @@ namespace WpfApp02_TreeView
             // jeżeli jest ona pusta to zakłądamy, że mamy do czynienia z napędem
             // if the name is blank we presume it's drive as we cannot have a blank file or a folder name
             // dalej po przez sprawdzenie atrybutu pliku sprawdzamy czy jest to katalog
-            var name = MainWindow.GetFileFolderName(path);
+            // var name = MainWindow.GetFileFolderName(path);
+            string name = "";
                         
             
             if (string.IsNullOrEmpty(name))
